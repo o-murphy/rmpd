@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rmpd"
+authors = [
+    { name="o-murphy" },
+]
+version = "0.1.0b1"
+description = "puesc Sent RMPD fetcher"
+requires-python = ">=3.10"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = [
+    "beautifulsoup4>=4.13.3",
+    "dotenv>=0.9.9",
+    "requests>=2.32.3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["rmpd*"]
+
+[project.scripts]
+rmpd = "rmpd.__main__:main"
